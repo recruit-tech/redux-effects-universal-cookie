@@ -73,7 +73,7 @@ getting cookie:
 ```javascript
 import { cookie } from 'redux-effects-univarsal-cookie';
 
-const propmise = store.dispatch(cookie('foo'));
+const promise = store.dispatch(cookie('foo'));
 ```
 
 setting cookie:
@@ -81,7 +81,7 @@ setting cookie:
 ```javascript
 import { cookie } from 'redux-effects-univarsal-cookie';
 
-const propmise = store.dispatch(cookie('foo', 'some value'));
+const promise = store.dispatch(cookie('foo', 'some value'));
 ```
 
 setting cookie with options:
@@ -89,7 +89,7 @@ setting cookie with options:
 ```javascript
 import { cookie } from 'redux-effects-univarsal-cookie';
 
-const propmise = store.dispatch(cookie('foo', 'some value', { maxAge: 600 }));
+const promise = store.dispatch(cookie('foo', 'some value', { maxAge: 600 }));
 ```
 
 ## Defferences from redux-effects-cookie
@@ -129,7 +129,7 @@ Create Redux middleware for browser environment.
 
 ##### Returns
 
-* *(Function)* Redux middleware.
+* *(Function)*: Redux middleware.
 
 #### `cookieMiddleware(cookies)`
 
@@ -143,7 +143,7 @@ Create Redux middleware for Koa environment.
 
 ##### Returns
 
-* *(Function)* Redux middleware.
+* *(Function)*: Redux middleware.
 
 #### `cookieMiddleware(req, res)`
 
@@ -160,4 +160,4 @@ Create Redux middleware for Express environment.
 
 ##### Returns
 
-* *(Function)* Redux middleware.
+* *(Function)*: Redux middleware.
