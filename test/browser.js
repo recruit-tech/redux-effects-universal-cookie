@@ -19,7 +19,8 @@ test('browser, get cookie', () => {
 
 test('browser, set cookie', () => {
   store.dispatch(cookie('bar', '200', { path: '/' })).then(mustCall(() => {
-    assert(global.document.cookie.toLowerCase() === serialize('bar', '200', { path: '/' }).toLowerCase());
+    assert(global.document.cookie.toLowerCase() ===
+      serialize('bar', '200', { path: '/' }).toLowerCase());
   }), assert.fail);
 });
 

@@ -34,6 +34,9 @@ test('koa, set cookie', () => {
 
 test('koa, clear cookie', () => {
   store.dispatch(cookie('baz', null, { path: '/' })).then(mustCall(() => {
-    assert.deepEqual(cookies, { baz: { value: null, options: { path: '/', expires: new Date(0) } } });
+    assert.deepEqual(
+      cookies,
+      { baz: { value: null, options: { path: '/', expires: new Date(0) } } },
+    );
   }), assert.fail);
 });

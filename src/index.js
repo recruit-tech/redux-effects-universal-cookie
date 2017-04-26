@@ -26,13 +26,13 @@ export function cookie(name, value, options = {}) {
  * Middleware
  */
 export default function cookieMiddleware(...args) {
-  const cookieFactories = [
-    browserCookie,
+  const cookiesFactories = [
+    browserCookies,
     (cookies) => cookies, // https://www.npmjs.com/package/cookies
-    expressCookie,
+    expressCookies,
   ];
-  const cookieFactory = cookieFactories[Math.min(args.length, 2)];
-  const cookie = cookieFactory(...args);
+  const cookiesFactory = cookiesFactories[Math.min(args.length, 2)];
+  const cookies = cookiesFactory(...args);
 
   return () => (next) => (action) => {
     const { type } = action;
@@ -42,12 +42,12 @@ export default function cookieMiddleware(...args) {
 
     const { name, value, options } = action.payload;
     return type === GET_COOKIE
-      ? Promise.resolve(cookie.get(name))
-      : Promise.resolve(cookie.set(name, value, options));
+      ? Promise.resolve(cookies.get(name))
+      : Promise.resolve(cookies.set(name, value, options));
   };
 }
 
-function browserCookie() {
+function browserCookies() {
   return {
     get(name) {
       return componentCookie(name);
@@ -58,7 +58,7 @@ function browserCookie() {
   };
 }
 
-function expressCookie(req, res) {
+function expressCookies(req, res) {
   return {
     get(name) {
       return req.cookies[name];

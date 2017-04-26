@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
-import { default as cookie } from '../../src';
+import cookieMiddleware from '../../src';
 
 export default function (...args) {
   return createStore(() => {
-  }, {}, applyMiddleware(cookie(...args)));
+  }, {}, applyMiddleware(cookieMiddleware(...args)));
 }
