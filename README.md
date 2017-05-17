@@ -71,7 +71,7 @@ app.use(function *(){
 getting cookie:
 
 ```javascript
-import { cookie } from 'redux-effects-univarsal-cookie';
+import { cookie } from 'redux-effects-universal-cookie';
 
 const promise = store.dispatch(cookie('foo'));
 ```
@@ -79,7 +79,7 @@ const promise = store.dispatch(cookie('foo'));
 setting cookie:
 
 ```javascript
-import { cookie } from 'redux-effects-univarsal-cookie';
+import { cookie } from 'redux-effects-universal-cookie';
 
 const promise = store.dispatch(cookie('foo', 'some value'));
 ```
@@ -87,7 +87,7 @@ const promise = store.dispatch(cookie('foo', 'some value'));
 setting cookie with options:
 
 ```javascript
-import { cookie } from 'redux-effects-univarsal-cookie';
+import { cookie } from 'redux-effects-universal-cookie';
 
 const promise = store.dispatch(cookie('foo', 'some value', { maxAge: 600 }));
 ```
