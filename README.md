@@ -1,3 +1,8 @@
+# Deprecated.
+
+this modules are not maintained. And cookies should not be used in client.
+see [ITP 2.1](https://webkit.org/blog/8613/intelligent-tracking-prevention-2-1/)
+
 # redux-effects-universal-cookie
 
 Universal version of
